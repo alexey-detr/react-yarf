@@ -1,0 +1,44 @@
+{
+  "name": "react-yarf",
+  "version": "1.0.0",
+  "description": "Yet Another React Flexes",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist",
+    "lint": "eslint src/**",
+    "lint:watch": "esw -w lib/**",
+    "prepublish": "npm run build"
+  },
+  "author": "Alexey Ponomarev <xlz@ya.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.56",
+    "@babel/core": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.56",
+    "@babel/preset-env": "^7.0.0-beta.56",
+    "@babel/preset-react": "^7.0.0-beta.56",
+    "@commitlint/cli": "^7.0.0",
+    "babel-cli": "^7.0.0-beta.3",
+    "babel-eslint": "^8.2.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.3.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-to-typescript-definitions": "^1.0.0",
+    "standard-version": "^4.4.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
