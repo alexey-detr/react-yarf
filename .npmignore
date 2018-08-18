@@ -1,2 +1,4 @@
 .babelrc
+.eslintrc
 src
+.idea
