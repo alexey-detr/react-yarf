@@ -9,7 +9,8 @@
     "build": "babel src -d dist",
     "lint": "eslint src/**",
     "lint:watch": "esw -w lib/**",
-    "prepublish": "npm run build"
+    "prepublish": "npx standard-version && git push --follow-tags origin master && npm run build",
+    "postpublish": "npx conventional-github-releaser -p angular -r 0"
   },
   "author": "Alexey Ponomarev <xlz@ya.ru>",
   "license": "MIT",
