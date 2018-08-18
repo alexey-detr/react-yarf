@@ -33,9 +33,10 @@ class FlexRow extends Component {
             flexWrap: wrap ? 'wrap' : undefined,
             justifyContent: rowJustifyContent[hAlign],
             alignItems: rowAlignItems[vAlign],
+            ...propStyle,
         };
 
-        return <Tag {...restProps} style={{ ...styles, propStyle }}>{children}</Tag>;
+        return <Tag {...restProps} style={styles}>{children}</Tag>;
     }
 }
 

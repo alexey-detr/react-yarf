@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import {
-    columnJustifyContent,
     columnAlignItems,
+    columnJustifyContent,
 } from '../lib/stylesMapping';
+import PropTypes from 'prop-types';
 
 class FlexColumn extends Component {
+    static propTypes = {
+        vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'spaceBetween', 'spaceAround', 'spaceEvenly']),
+        hAlign: PropTypes.oneOf(['left', 'right', 'center', 'stretch', 'baseline']),
+        wrap: PropTypes.bool,
+        as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+        children: PropTypes.element,
+        style: PropTypes.object,
+    };
+
     render() {
         const {
-            vAlign = 'top',
-            hAlign = 'center',
+            vAlign = 'center',
+            hAlign = 'left',
             wrap = false,
             as,
             children,
@@ -22,11 +32,12 @@ class FlexColumn extends Component {
             display: 'flex',
             flexDirection: 'column',
             flexWrap: wrap ? 'wrap' : undefined,
-            justifyContent: columnJustifyContent[hAlign],
-            alignItems: columnAlignItems[vAlign],
+            justifyContent: columnJustifyContent[vAlign],
+            alignItems: columnAlignItems[hAlign],
+            ...propStyle,
         };
 
-        return <Tag {...restProps} style={{...styles, propStyle}}>{children}</Tag>;
+        return <Tag {...restProps} style={styles}>{children}</Tag>;
     }
 }
 
